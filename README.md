@@ -1,458 +1,245 @@
-\# EduPilot 🎓
+from pathlib import Path
 
+readme = r"""# EduPilot 🎓
 
-
-\## AI-Powered Student Performance Prediction and Academic Assistance Platform
-
-
+## AI-Powered Student Performance Prediction and Academic Assistance Platform
 
 EduPilot is an AI/ML-based student performance management platform designed to help educational institutions monitor student performance, predict academic outcomes, identify performance risks, and provide personalized recommendations.
 
+The platform provides role-based capabilities for **Administrators, Teachers, and Students**.
 
+---
 
-The system provides different capabilities for \*\*Administrators, Teachers, and Students\*\*, allowing each role to access features according to their responsibilities.
+## 🎯 Problem Statement
 
+Educational institutions collect large amounts of academic and behavioral information, including:
 
+- Attendance
+- Study hours
+- Assignment scores
+- Internal marks
+- Previous GPA
+- Sleep hours
+- Stress level
+- Extracurricular activities
 
-\---
+Reviewing these factors manually can make it difficult to identify students who may be at academic risk early.
 
+EduPilot addresses this problem by combining machine learning prediction, academic analytics, prediction history, and personalized recommendations in a single platform.
 
+---
 
-\## 🎯 Problem Statement
-
-
-
-Educational institutions generate large amounts of student academic data such as:
-
-
-
-\- Attendance
-
-\- Study hours
-
-\- Assignment scores
-
-\- Internal marks
-
-\- Previous GPA
-
-\- Sleep hours
-
-\- Stress level
-
-\- Extracurricular activities
-
-
-
-However, this information is often reviewed manually, making it difficult to identify students who may be at academic risk early.
-
-
-
-EduPilot addresses this problem by using machine learning-based prediction and data-driven recommendations to help educators and students make better academic decisions.
-
-
-
-\---
-
-
-
-\## 💡 Proposed Solution
-
-
+## 💡 Proposed Solution
 
 EduPilot combines:
 
+- Student performance data
+- Machine learning prediction
+- Academic risk classification
+- Personalized recommendations
+- Academic analytics
+- Prediction history
+- Role-based access control
+- Student management
+- AI chatbot assistance
+- Report export
 
+The system predicts student performance and classifies the predicted result into a risk level so that educators can identify students who may need additional academic support.
 
-\- Student performance data
+---
 
-\- Machine learning prediction
+## 🚀 Key Features
 
-\- Risk classification
-
-\- Personalized recommendations
-
-\- Academic analytics
-
-\- Student history
-
-\- Role-based access control
-
-\- AI chatbot assistance
-
-
-
-into a single platform.
-
-
-
-The system predicts student performance and categorizes academic risk so that teachers and administrators can identify students who may need additional support.
-
-
-
-\---
-
-
-
-\## 🚀 Key Features
-
-
-
-\### 👨‍🎓 Student
-
-
+### 👨‍🎓 Student
 
 Students can:
 
+- View their dashboard
+- View their profile
+- Check predicted marks
+- View prediction risk
+- Receive recommendations
+- View prediction history
+- Monitor academic progress
+- Use the AI chatbot
+- Manage profile/settings
 
-
-\- View their dashboard
-
-\- View their profile
-
-\- Check predicted marks
-
-\- View prediction risk
-
-\- Receive recommendations
-
-\- View prediction history
-
-\- Use the AI chatbot
-
-\- Monitor academic progress
-
-
-
-\### 👨‍🏫 Teacher
-
-
+### 👨‍🏫 Teacher
 
 Teachers can:
 
+- View student records
+- Search and filter students
+- View student details
+- Edit student information
+- Compare student performance
+- Run predictions
+- View recommendations
+- Monitor prediction history
+- Identify students requiring attention
 
-
-\- View student records
-
-\- Search and filter students
-
-\- View student details
-
-\- Edit student information
-
-\- Compare student performance
-
-\- Run predictions
-
-\- View recommendations
-
-\- Monitor prediction history
-
-\- Identify students requiring attention
-
-
-
-\### 👨‍💼 Administrator
-
-
+### 👨‍💼 Administrator
 
 Administrators can:
 
+- Manage students
+- Add student records
+- Edit student records
+- Delete student records
+- View analytics
+- Monitor performance statistics
+- Generate/export reports
+- Access administrative features
 
+---
 
-\- Manage students
+## 🤖 Machine Learning
 
-\- Add students
+EduPilot uses a **Random Forest Regressor** to predict student marks.
 
-\- Edit student records
+### Input Features
 
-\- Delete student records
+The trained model uses these eight features:
 
-\- View analytics
+1. Attendance
+2. Study hours
+3. Assignment score
+4. Internal marks
+5. Previous GPA
+6. Sleep hours
+7. Stress level
+8. Extracurricular activity
 
-\- Monitor performance statistics
+### Prediction Output
 
-\- Generate/export reports
+The model produces:
 
-\- Access administrative features
+- Predicted marks
+- Academic risk level
 
+### Risk Classification
 
+| Predicted Marks | Risk Level |
+|---:|---|
+| 80–100 | Low |
+| 50–79.99 | Medium |
+| Below 50 | High |
 
-\---
+---
 
+## 📊 Model Evaluation
 
+The trained model was evaluated using a train/test split with a fixed random state.
 
-\## 🤖 Machine Learning
+| Metric | Result |
+|---|---:|
+| MAE | **0.89** |
+| RMSE | **1.07** |
+| R² | **0.94** |
 
+These results indicate that the current trained model performs well on the available test data.
 
+### Feature Importance
 
-EduPilot uses machine learning to estimate student performance based on academic and behavioral attributes.
+The Random Forest feature importance values obtained during evaluation were:
 
+| Feature | Importance |
+|---|---:|
+| Previous GPA | 0.201459 |
+| Assignment Score | 0.196599 |
+| Attendance | 0.161292 |
+| Internal Marks | 0.152676 |
+| Study Hours | 0.149674 |
+| Stress Level | 0.064769 |
+| Sleep Hours | 0.047463 |
+| Extracurricular | 0.026069 |
 
+---
 
-\### Input Features
+## 📈 Analytics
 
+EduPilot provides analytics for monitoring student performance, including:
 
+- Overall student performance
+- Department-wise performance
+- Monthly performance
+- Risk distribution
+- Top-performing students
+- Performance comparisons
 
-The system can use information such as:
+These analytics help educators understand academic trends and identify students who may require attention.
 
+---
 
+## 💡 Recommendation System
 
-\- Age
+The recommendation module transforms prediction and academic information into actionable guidance.
 
-\- Gender
+Recommendations can focus on:
 
-\- Department
+- Study habits
+- Attendance
+- Assignments
+- Academic performance
+- Time management
+- Overall improvement
 
-\- Semester
+---
 
-\- Attendance
+## 🤖 AI Chatbot
 
-\- Study hours
+EduPilot includes an AI chatbot interface that provides an additional academic-assistance interaction layer for users.
 
-\- Assignment score
+---
 
-\- Internal marks
+## 🔐 Authentication and Security
 
-\- Previous GPA
+The backend uses:
 
-\- Sleep hours
+- JWT-based authentication
+- Role-based access control
+- Password management
+- Email verification support
+- Password reset support
+- Protected routes
 
-\- Stress level
+---
 
-\- Extracurricular activity
-
-
-
-\### Prediction Output
-
-
-
-The prediction system produces:
-
-
-
-\- Predicted marks
-
-\- Academic risk level
-
-
-
-Risk levels include:
-
-
-
-\- 🟢 Low
-
-\- 🟡 Medium
-
-\- 🔴 High
-
-
-
-The prediction results can then be used by the recommendation system to provide appropriate academic guidance.
-
-
-
-\---
-
-
-
-\## 📊 Analytics
-
-
-
-EduPilot provides analytics for monitoring student performance.
-
-
-
-Analytics can include:
-
-
-
-\- Overall student performance
-
-\- Department-wise performance
-
-\- Monthly performance
-
-\- Risk distribution
-
-\- Top-performing students
-
-\- Performance comparisons
-
-
-
-These analytics help administrators and teachers understand academic trends.
-
-
-
-\---
-
-
-
-\## 💡 Recommendation System
-
-
-
-EduPilot provides personalized recommendations based on student performance and academic indicators.
-
-
-
-Recommendations can focus on areas such as:
-
-
-
-\- Study habits
-
-\- Attendance
-
-\- Assignments
-
-\- Academic performance
-
-\- Time management
-
-\- Overall improvement
-
-
-
-The objective is to transform prediction results into actionable academic guidance.
-
-
-
-\---
-
-
-
-\## 🤖 AI Chatbot
-
-
-
-EduPilot includes an AI chatbot interface designed to provide students and users with academic assistance.
-
-
-
-The chatbot can serve as an additional interaction layer within the platform.
-
-
-
-\---
-
-
-
-\## 🔐 Role-Based Access
-
-
-
-EduPilot uses role-based access control.
-
-
-
-| Feature | Admin | Teacher | Student |
-
-|---|:---:|:---:|:---:|
-
-| Dashboard | ✅ | ✅ | ✅ |
-
-| Student Management | ✅ | ✅ | ❌ |
-
-| Add Student | ✅ | ❌ | ❌ |
-
-| Edit Student | ✅ | ✅ | ❌ |
-
-| Delete Student | ✅ | ❌ | ❌ |
-
-| Student Comparison | ✅ | ✅ | ❌ |
-
-| Prediction | ✅ | ✅ | ✅ |
-
-| Recommendations | ✅ | ✅ | ✅ |
-
-| History | ✅ | ✅ | ✅ |
-
-| Analytics | ✅ | ❌ | ❌ |
-
-| Export Reports | ✅ | ❌ | ❌ |
-
-| AI Chatbot | ✅ | ✅ | ✅ |
-
-
-
-\---
-
-
-
-\## 🏗️ System Architecture
-
-
+## 🏗️ System Architecture
 
 ```text
-
-&#x20;                   ┌──────────────────────┐
-
-&#x20;                   │       User           │
-
-&#x20;                   │ Admin / Teacher /    │
-
-&#x20;                   │       Student        │
-
-&#x20;                   └──────────┬───────────┘
-
-&#x20;                              │
-
-&#x20;                              ▼
-
-&#x20;                   ┌──────────────────────┐
-
-&#x20;                   │   React Frontend     │
-
-&#x20;                   │       + Vite         │
-
-&#x20;                   └──────────┬───────────┘
-
-&#x20;                              │
-
-&#x20;                              │ REST API
-
-&#x20;                              ▼
-
-&#x20;                   ┌──────────────────────┐
-
-&#x20;                   │   Flask Backend      │
-
-&#x20;                   │   Authentication     │
-
-&#x20;                   │   Role Management    │
-
-&#x20;                   │   Business Logic     │
-
-&#x20;                   └───────┬───────┬──────┘
-
-&#x20;                           │       │
-
-&#x20;             ┌─────────────┘       └─────────────┐
-
-&#x20;             ▼                                   ▼
-
-&#x20;   ┌──────────────────┐                ┌──────────────────┐
-
-&#x20;   │     Database     │                │   ML Prediction  │
-
-&#x20;   │      SQLite      │                │     System       │
-
-&#x20;   └──────────────────┘                └────────┬─────────┘
-
-&#x20;                                                │
-
-&#x20;                                                ▼
-
-&#x20;                                     ┌────────────────────┐
-
-&#x20;                                     │ Recommendations    │
-
-&#x20;                                     │ \& Risk Analysis    │
-
-&#x20;                                     └────────────────────┘
-
++-----------------------+
+|       User            |
+| Student / Teacher /   |
+| Administrator         |
++-----------+-----------+
+            |
+            v
++-----------------------+
+| React Frontend        |
+| Dashboard, Forms,     |
+| Analytics, History,   |
+| Prediction, Chatbot   |
++-----------+-----------+
+            |
+            | HTTP / REST API
+            v
++-----------------------+
+| Flask Backend         |
+| Authentication       |
+| Student Management   |
+| Prediction           |
+| Recommendation       |
+| Analytics            |
+| History / Export     |
+| Chatbot              |
++-----------+-----------+
+            |
+      +-----+------+
+      |            |
+      v            v
++-----------+  +----------------+
+| Database  |  | ML Model       |
+| SQLite /  |  | Random Forest  |
+| SQLAlchemy|  | Regressor      |
++-----------+  +----------------+

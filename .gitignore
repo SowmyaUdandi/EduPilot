@@ -31,3 +31,5 @@ build/
 # OS Files
 .DS_Store
 Thumbs.db
+# Flask instance files
+instance/

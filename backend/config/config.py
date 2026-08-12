@@ -26,23 +26,13 @@ class Config:
     # DATABASE
     # ==========================================
 
-    DATABASE_PATH = os.path.abspath(
-        os.path.join(
-            BASE_DIR,
-            "..",
-            "instance",
-            "edupilot.db"
-        )
-    )
+    DATABASE_PATH = "/tmp/edupilot.db"
 
     SQLALCHEMY_DATABASE_URI = (
-        "sqlite:///" +
-        DATABASE_PATH.replace("\\", "/")
+        "sqlite:///" + DATABASE_PATH
     )
 
-    SQLALCHEMY_TRACK_MODIFICATIONS = False
-
-    # ==========================================
+    SQLALCHEMY_TRACK_MODIFICATIONS = False    # ==========================================
     # JWT
     # ==========================================
 

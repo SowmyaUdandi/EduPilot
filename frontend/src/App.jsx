@@ -1,4 +1,4 @@
-﻿import { Routes, Route, Navigate } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 
 // ==========================================
 // Authentication
@@ -27,7 +27,7 @@ import StudentComparison from "./pages/students/StudentComparison";
 // Profile
 // ==========================================
 import StudentProfile from "./pages/students/StudentProfile";
-import ChangePassword from "./pages/Profile/ChangePassword";
+import ChangePassword from "./pages/profile/ChangePassword";
 
 // ==========================================
 // Prediction

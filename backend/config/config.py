@@ -3,6 +3,7 @@ from dotenv import load_dotenv
 from datetime import timedelta
 
 # Load backend/.env specifically
+
 BASE_DIR = os.path.abspath(
     os.path.join(os.path.dirname(__file__), "..")
 )
@@ -10,6 +11,7 @@ BASE_DIR = os.path.abspath(
 load_dotenv(
     os.path.join(BASE_DIR, ".env")
 )
+
 
 class Config:
 

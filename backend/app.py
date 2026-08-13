@@ -188,6 +188,76 @@ with app.app_context():
         print("Password:", demo_password)
         print("===================================")
 
+            # ==============================
+    # CREATE DEMO STUDENT
+    # ==============================
+
+    student_email = "student@gmail.com"
+    student_password = "123456"
+
+    student_user = User.query.filter_by(
+        email=student_email
+    ).first()
+
+    if not student_user:
+
+        hashed_password = bcrypt.hashpw(
+            student_password.encode("utf-8"),
+            bcrypt.gensalt()
+        ).decode("utf-8")
+
+        student_user = User(
+            full_name="Demo Student",
+            email=student_email,
+            password=hashed_password,
+            role="student",
+            is_verified=True
+        )
+
+        db.session.add(student_user)
+        db.session.commit()
+
+        print("===================================")
+        print("DEMO STUDENT CREATED")
+        print("Email:", student_email)
+        print("Password:", student_password)
+        print("===================================")
+
+    # ==============================
+    # CREATE DEMO ADMIN
+    # ==============================
+
+    admin_email = "admin@gmail.com"
+    admin_password = "123456"
+
+    admin_user = User.query.filter_by(
+        email=admin_email
+    ).first()
+
+    if not admin_user:
+
+        hashed_password = bcrypt.hashpw(
+            admin_password.encode("utf-8"),
+            bcrypt.gensalt()
+        ).decode("utf-8")
+
+        admin_user = User(
+            full_name="Demo Admin",
+            email=admin_email,
+            password=hashed_password,
+            role="admin",
+            is_verified=True
+        )
+
+        db.session.add(admin_user)
+        db.session.commit()
+
+        print("===================================")
+        print("DEMO ADMIN CREATED")
+        print("Email:", admin_email)
+        print("Password:", admin_password)
+        print("===================================")
+
     print("\n========== USERS ==========")
 
     users = User.query.all()

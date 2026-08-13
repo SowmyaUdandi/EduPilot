@@ -1,4 +1,4 @@
-﻿import { useState } from "react";
+import { useState } from "react";
 import DashboardLayout from "../../components/layout/DashboardLayout";
 import axios from "axios";
 
@@ -19,7 +19,7 @@ function ChangePassword() {
       const token = localStorage.getItem("token");
 
       const response = await axios.post(
-        `${import.meta.env.VITE_API_URL}/change-password`,
+        `/api/change-password`,
         {
           current_password: currentPassword,
           new_password: newPassword,

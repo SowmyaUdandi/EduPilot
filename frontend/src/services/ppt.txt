@@ -1,0 +1,17 @@
+Title
+Problem Statement
+Objectives
+Existing vs Proposed System
+System Architecture
+Technology Stack
+ML Methodology
+Model Evaluation & Feature Importance
+Major Features
+Role-Based Access
+Application Screenshots
+User Flow
+Results & Benefits
+Limitations
+Future Scope
+Conclusion
+Q&A

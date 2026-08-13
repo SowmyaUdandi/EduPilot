@@ -1,11 +1,11 @@
-﻿import axios from "axios";
+import axios from "axios";
 
 // ======================================
 // API CONFIGURATION
 // ======================================
 
 const API = axios.create({
-  baseURL: `${import.meta.env.VITE_API_URL}/api`,
+  baseURL: "/api",
 });
 
 // ======================================
@@ -252,17 +252,19 @@ export const getTopPerformers = async () => {
 
 export const exportExcel = () => {
   window.open(
-    `${import.meta.env.VITE_API_URL}/api/export/excel`,
+    "/api/export/excel",
     "_blank"
   );
 };
 
 export const exportPDF = () => {
   window.open(
-    `${import.meta.env.VITE_API_URL}/api/export/pdf`,
+    "/api/export/pdf",
     "_blank"
   );
-};// ======================================
+};
+
+// ======================================
 // GET STUDENT PREDICTION HISTORY
 // ======================================
 

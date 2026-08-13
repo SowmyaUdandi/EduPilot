@@ -1,4 +1,4 @@
-﻿import { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 
@@ -15,7 +15,7 @@ function VerifyEmail() {
   const verifyEmail = async () => {
     try {
       const res = await axios.get(
-        `${import.meta.env.VITE_API_URL}/api/verify-email/${token}`
+        `/api/verify-email/${token}`
       );
 
       setSuccess(true);

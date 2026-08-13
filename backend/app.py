@@ -127,10 +127,66 @@ app.register_blueprint(change_password_bp)
 # ==============================
 # Create Database Tables
 # ==============================
+# ==============================
+# Create Database Tables
+# ==============================
 
 with app.app_context():
 
     db.create_all()
+
+    # ==============================
+    # CREATE / RESET DEMO TEACHER
+    # ==============================
+
+    demo_email = "teacher@gmail.com"
+    demo_password = "123456"
+
+    demo_user = User.query.filter_by(
+        email=demo_email
+    ).first()
+
+    if not demo_user:
+
+        hashed_password = bcrypt.hashpw(
+            demo_password.encode("utf-8"),
+            bcrypt.gensalt()
+        ).decode("utf-8")
+
+        demo_user = User(
+            full_name="Teacher",
+            email=demo_email,
+            password=hashed_password,
+            role="teacher",
+            is_verified=True
+        )
+
+        db.session.add(demo_user)
+        db.session.commit()
+
+        print("===================================")
+        print("DEMO TEACHER CREATED")
+        print("Email:", demo_email)
+        print("Password:", demo_password)
+        print("===================================")
+
+    else:
+
+        demo_user.password = bcrypt.hashpw(
+            demo_password.encode("utf-8"),
+            bcrypt.gensalt()
+        ).decode("utf-8")
+
+        demo_user.role = "teacher"
+        demo_user.is_verified = True
+
+        db.session.commit()
+
+        print("===================================")
+        print("DEMO TEACHER READY")
+        print("Email:", demo_email)
+        print("Password:", demo_password)
+        print("===================================")
 
     print("\n========== USERS ==========")
 
